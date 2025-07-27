@@ -67,7 +67,7 @@ The avatar system consists of:
 
 1. **Avatar Generator** (`src/lib/avatar-generator.ts`): Core logic for generating SVG avatars
 2. **Constants** (`src/lib/avatar-constants.ts`): Pattern and palette definitions
-3. **API Routes**: 
+3. **API Routes**:
    - `/api/avatar/[id]`: Generate avatar for any identifier
    - `/api/avatar-pattern/[pattern]`: Preview specific pattern/palette combinations
 4. **Demo Page** (`src/routes/+page.svelte`): Interactive gallery and documentation
@@ -78,7 +78,3 @@ The avatar system consists of:
 2. Hash values determine pattern (0-28) and color palette (0-19)
 3. SVG is generated server-side with the selected pattern and colors
 4. Response is cached for 1 year (avatars are immutable for a given input)
-
-## License
-
-Commercial software - not open source.
