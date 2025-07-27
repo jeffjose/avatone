@@ -62,7 +62,7 @@
         <div class="flex items-center gap-2">
           {#if inputText}
             <img
-              src="/api/avatar/{encodeURIComponent(inputText)}"
+              src="/avatar/{encodeURIComponent(inputText)}"
               alt="Generated avatar"
               class="w-24 h-24 rounded-full shadow-lg"
             />
@@ -80,7 +80,7 @@
       <div class="bg-gray-900 rounded p-4 font-mono text-sm">
         <p class="text-gray-400 mb-1">API Endpoint:</p>
         <code class="text-gray-100">
-          GET /api/avatar/{inputText || '{identifier}'}
+          GET /avatar/{inputText || '{identifier}'}
         </code>
       </div>
     </section>
@@ -92,7 +92,7 @@
         {#each demoStrings as str}
           <div class="flex flex-col items-center">
             <img
-              src="/api/avatar/{encodeURIComponent(str)}"
+              src="/avatar/{encodeURIComponent(str)}"
               alt="Avatar for {str}"
               class="w-16 h-16 rounded-full shadow"
             />
@@ -144,7 +144,7 @@
       <!-- Pattern Preview -->
       <div class="bg-gray-900 rounded p-8 flex justify-center">
         <img
-          src="/api/avatar-pattern/{selectedPattern}?color={selectedPalette}"
+          src="/avatar/pattern/{selectedPattern}?color={selectedPalette}"
           alt="Pattern {selectedPattern} with palette {selectedPalette}"
           class="w-32 h-32 rounded-full shadow-lg"
         />
@@ -166,7 +166,7 @@
               {#each Array(20) as _, paletteIndex}
                 <div class="group relative">
                   <img
-                    src="/api/avatar-pattern/{patternIndex}?color={paletteIndex}"
+                    src="/avatar/pattern/{patternIndex}?color={paletteIndex}"
                     alt="{patternNames[patternIndex]} - {paletteNames[paletteIndex]}"
                     class="w-12 h-12 rounded-full shadow hover:shadow-md transition-shadow"
                   />

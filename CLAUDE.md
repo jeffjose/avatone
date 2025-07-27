@@ -43,9 +43,10 @@ src/
 │   └── index.ts              # Re-exports
 ├── routes/
 │   ├── +page.svelte          # Interactive demo and gallery
-│   └── api/
-│       ├── avatar/[id]/      # Main avatar generation endpoint
-│       └── avatar-pattern/   # Pattern preview endpoint
+│   └── avatar/
+│       ├── [id]/             # Main avatar generation endpoint
+│       └── pattern/
+│           └── [pattern]/    # Pattern preview endpoint
 └── app.css                   # Tailwind CSS imports
 ```
 
@@ -73,9 +74,9 @@ src/
 ### API Design
 
 - **Simple**: Single string parameter generates unique avatar
-- **RESTful**: `GET /api/avatar/{identifier}`
+- **RESTful**: `GET /avatar/{identifier}`
 - **Flexible**: Accepts any string (email, username, ID, etc.)
-- **Pattern Preview**: `GET /api/avatar-pattern/{pattern}?color={palette}`
+- **Pattern Preview**: `GET /avatar/pattern/{pattern}?color={palette}`
 
 ## Development Guidelines
 

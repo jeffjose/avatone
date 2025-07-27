@@ -407,10 +407,23 @@ export const GET: RequestHandler = async ({ params, url }) => {
   
   const svg = generatePatternPreview(patternType, paletteIndex);
   
+  // Create cache key from pattern and palette
+  const cacheKey = `pattern-${patternType}-palette-${paletteIndex}`;
+  
   return new Response(svg, {
     headers: {
       'Content-Type': 'image/svg+xml',
-      'Cache-Control': 'public, max-age=864000'
+      // Super aggressive caching - patterns are deterministic and never change
+      'Cache-Control': 'public, max-age=31536000, immutable, stale-while-revalidate=31536000',
+      'CDN-Cache-Control': 'public, max-age=31536000, immutable',
+      'Surrogate-Control': 'public, max-age=31536000, immutable',
+      // ETag for cache validation
+      'ETag': `"${cacheKey}-v1"`,
+      // Additional cache hints
+      'X-Pattern-Type': patternType.toString(),
+      'X-Palette-Index': paletteIndex.toString(),
+      'X-Content-Type-Options': 'nosniff',
+      'Vary': 'Accept-Encoding'
     }
   });
 };

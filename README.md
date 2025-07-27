@@ -15,7 +15,7 @@ Unique avatar generator for creating consistent, deterministic avatars based on 
 ### API Endpoint
 
 ```
-GET /api/avatar/{identifier}
+GET /avatar/{identifier}
 ```
 
 Where `{identifier}` can be any string - email, username, user ID, etc.
@@ -24,10 +24,10 @@ Where `{identifier}` can be any string - email, username, user ID, etc.
 
 ```html
 <!-- In HTML -->
-<img src="/api/avatar/user@example.com" alt="User avatar" class="w-16 h-16 rounded-full" />
+<img src="/avatar/user@example.com" alt="User avatar" class="w-16 h-16 rounded-full" />
 
 <!-- In Svelte -->
-<img src="/api/avatar/{userId}" alt="Avatar for {userName}" />
+<img src="/avatar/{userId}" alt="Avatar for {userName}" />
 ```
 
 ### Pattern Gallery
@@ -68,8 +68,8 @@ The avatar system consists of:
 1. **Avatar Generator** (`src/lib/avatar-generator.ts`): Core logic for generating SVG avatars
 2. **Constants** (`src/lib/avatar-constants.ts`): Pattern and palette definitions
 3. **API Routes**:
-   - `/api/avatar/[id]`: Generate avatar for any identifier
-   - `/api/avatar-pattern/[pattern]`: Preview specific pattern/palette combinations
+   - `/avatar/[id]`: Generate avatar for any identifier
+   - `/avatar/pattern/[pattern]`: Preview specific pattern/palette combinations
 4. **Demo Page** (`src/routes/+page.svelte`): Interactive gallery and documentation
 
 ## How It Works
