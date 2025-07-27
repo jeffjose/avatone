@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import { DUOTONE_PALETTES, PATTERN_COUNT } from '$lib/avatar-generator';
+import { DUOTONE_PALETTES, PATTERN_COUNT } from '$lib/avatar-constants';
 
 function generatePatternPreview(patternType: number, paletteIndex: number = 0): string {
   if (patternType < 0 || patternType >= PATTERN_COUNT) {
